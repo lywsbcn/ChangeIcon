@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     
 //首先,我们先把所有的组件名称保存在数组中,然后遍历这个数组,
 
-//如果,值相等的组件起用,其他的停用
+//如果,值相等的组件启用,其他的停用
 
     private void setIconwith(String alias){
     
@@ -157,11 +157,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void enabledComponent(PackageManager mp, ComponentName name) {
     
-        mp.setComponentEnabledSetting(name, PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP);
+        mp.setComponentEnabledSetting(name, PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
+        PackageManager.DONT_KILL_APP);
     }
     
     private void disableComponent(PackageManager mp,ComponentName name) {
     
-        mp.setComponentEnabledSetting(name, PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
+        mp.setComponentEnabledSetting(name, PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+        PackageManager.DONT_KILL_APP);
     }
 }
